@@ -3,8 +3,8 @@ name: Scrape latest data
 on:
   push:
   workflow_dispatch:
-  schedule:
-  - cron: '6,26,46 * * * *'
+  # schedule:
+  # - cron: '6,26,46 * * * *'
 
 jobs:
   scheduled:
@@ -17,11 +17,11 @@ jobs:
         curl https://incidents.fire.ca.gov/umbraco/api/IncidentApi/List?inactive=true | jq > incidents.json
         # curl 'https://www.fire.ca.gov/api/sitecore/Incident/GetFiresForMap' \
         #   -X POST --data-raw 'showFeatured=False' | jq > incidents-june-2023-format.json
-    - name: Commit and push if it changed
-      run: |-
-        git config user.name "Automated"
-        git config user.email "actions@users.noreply.github.com"
-        git add -A
-        timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" || exit 0
-        git push
+    # - name: Commit and push if it changed
+    #   run: |-
+    #     git config user.name "Automated"
+    #     git config user.email "actions@users.noreply.github.com"
+    #     git add -A
+    #     timestamp=$(date -u)
+    #     git commit -m "Latest data: ${timestamp}" || exit 0
+    #     git push
