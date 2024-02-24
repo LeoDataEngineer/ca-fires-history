@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check if directory exists
         run: |
-          if [ -d "data_snow.csv" ]; then
+          if [ -d "https://github.com/LeoDataEngineer/ca-fires-history/tree/main/data_snow.csv" ]; then
             echo "Directory exists"
           else
             echo "Directory does not exist"
@@ -21,7 +21,7 @@ jobs:
 
       - name: Delete directory
         if: ${{ success() }}
-        run: rm -rf data_snow.csv
+        run: rm -rf https://github.com/LeoDataEngineer/ca-fires-history/tree/main/data_snow.csv
         
    extract_snowfalke:
     runs-on: ubuntu-latest
