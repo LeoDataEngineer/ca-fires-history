@@ -23,7 +23,7 @@ jobs:
       - name: Extrae data snowflake
         uses: actions/upload-artifact@v4
         with:
-          name: data_snow
+          name: extracted_data
           path: data_snow.csv
 
   read_save_repo:
@@ -40,8 +40,8 @@ jobs:
         - name: Download artifact
           uses: actions/download-artifact@v4
           with:
-            name: data_snow
-            path: data_snow.csv
+            name: extracted_data
+            path: data_snow
   
         # Paso para agregar y subir el archivo CSV al repositorio
         - name: Add and commit CSV file
