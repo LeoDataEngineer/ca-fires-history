@@ -15,7 +15,7 @@ jobs:
       run: |-
         curl https://incidents.fire.ca.gov/umbraco/api/IncidentApi/List?inactive=true | jq > incidents.json
         # curl 'https://www.fire.ca.gov/api/sitecore/Incident/GetFiresForMap' \
-        #   -X POST --data-raw 'showFeatured=False' | jq > incidents-june-2023-format.json
+        # -X POST --data-raw 'showFeatured=False' | jq > incidents-june-2023-format.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
