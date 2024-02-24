@@ -25,10 +25,28 @@ jobs:
         with:
           name: data_snow
           path: data_snow.csv
+          
+  delete_tabla:
+    runs-on: ubuntu-latest
+    needs: extract_snowfalke
+    steps:
+      - name: Check if directory exists
+        run: |
+          if [ -d "data_snow.csv" ]; then
+            echo "Directory exists"
+          else
+            echo "Directory does not exist"
+            exit 0
+          fi
 
+      - name: Delete directory
+        if: ${{ success() }}
+        run: rm -rf data_snow.csv
+
+        
   read_save_repo:
       runs-on: ubuntu-latest
-      needs: extract_snowfalke
+      needs: delete_tabla
       steps:
         - uses: actions/checkout@v4
         - uses: actions/setup-python@v5
