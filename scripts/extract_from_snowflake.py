@@ -44,7 +44,7 @@ data, columns = get_data_snowflake(conn)
 # Si se obtuvieron datos, crear un DataFrame de Pandas y guardarlos como CSV
 if data and columns:
     df = pd.DataFrame(data, columns=columns)
-    df.to_csv('data_snow.csv', index=False)
+    df.to_csv('/data_snow/data_snow.csv', index=False)
 
 # Cerrar la conexión
 conn.close()
