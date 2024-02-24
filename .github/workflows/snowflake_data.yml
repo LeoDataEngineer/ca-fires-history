@@ -42,7 +42,7 @@ jobs:
           uses: actions/download-artifact@v4
           with:
             name: data_snow
-            path: data_snow.csv
+            path: /
   
         # Paso para agregar y subir el archivo CSV al repositorio
         - name: Add and commit CSV file
