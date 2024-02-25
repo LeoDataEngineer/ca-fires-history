@@ -3,7 +3,7 @@ name: ETL con Python subte
 on:
   # workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'  # Ejecutar cada minuto
+    - cron: '30 * * * *'  # Ejecutar cada minuto
 jobs:
     extract:
         runs-on: ubuntu-latest
