@@ -2,8 +2,8 @@ name: Extract_data_snowflow
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '35 * * * *'  # Ejecutar cada minuto
+  # schedule:
+  #   - cron: '35 * * * *'  # Ejecutar cada minuto
 
 jobs:
         
