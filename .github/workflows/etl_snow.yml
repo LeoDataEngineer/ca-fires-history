@@ -1,7 +1,7 @@
 name: ETL con Python subte
 
 on:
-  # workflow_dispatch:
+  workflow_dispatch:
   schedule:
     - cron: '30 * * * *'  # Ejecutar cada minuto
 jobs:
